@@ -11,7 +11,8 @@ import { DropdownComponent } from './ass_drpdwn.component';
 import { testDirective } from './test.directive';
 import { imagePipe } from './image.pipes';
 import { TemplateFormComponent } from './template-form/template-form.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import {FormsModule} from '@angular/forms';
     DropdownComponent,
     testDirective,
     imagePipe,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormComponent,
+    ReactiveFormsModule
    
   ],
   imports: [
