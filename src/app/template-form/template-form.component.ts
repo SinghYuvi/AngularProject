@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TempForm } from 'src/shared/templateform';
+import { TempForm } from 'src/shared/model/templateform';
 
 @Component({
   selector: 'app-template-form',

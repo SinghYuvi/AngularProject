@@ -1,3 +1,121 @@
-<p>
-  reactive-form works!
-</p>
+
+<div class="container">
+  
+  <div class="row">
+    
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+    
+      <form
+      [formGroup]="userForm" 
+      class="form-horizontal" role="form"
+      (ngSubmit)="Save(userForm.value)"
+      >
+          <div class="form-group">
+            <legend>Reactive Form Validation</legend>
+          </div>
+
+          <div class="form-group"
+          [class.has-error]="!userForm.get('username').valid && userForm.get('username').touched"
+          [class.has-success]="userForm.get('username').valid"
+          >
+          <!-- Username Part -->
+          <div class="form-group">
+            <input type="text" class="form-control" 
+            placeholder="Enter your username"
+            formControlName="username"
+            >
+           <div class="alert alert-danger"
+            *ngIf="userForm.get('username').hasError('required')
+              && submitted">
+                  Username is required*
+           </div>
+           <div class="alert alert-danger"
+           *ngIf="userForm.get('username').hasError('minlength')
+             && submitted
+           "
+          >
+                 Username must be a 5 characters*
+          </div>
+        </div>
+
+        </div>
+
+ 
+        <!-- UserPassword Part -->
+          <div class="form-group"
+          [class.has-error]="!userForm.get('userpassword').valid && userForm.get('userpassword').touched"
+          [class.has-success]="userForm.get('userpassword').valid"
+          >
+
+          <div class="form-group">
+            <input type="password" class="form-control" 
+            placeholder="Enter your userpassword"
+            formControlName="userpassword"
+            >
+            <div class="alert alert-danger"
+            *ngIf="userForm.get('userpassword').hasError('required')
+              && submitted">
+              Userpassword is required*
+           </div>
+
+          </div>
+</div>
+        
+          <!-- UserEmail Part -->
+          <div class="form-group"
+          [class.has-error]="!userForm.get('useremail').valid && userForm.get('useremail').touched"
+          [class.has-success]="userForm.get('useremail').valid"
+          >
+
+          <div class="form-group">
+            <input type="email" class="form-control" 
+            placeholder="Enter your useremail"
+            formControlName="useremail"
+            >   
+            <div class="alert alert-danger"
+            *ngIf="userForm.get('useremail').hasError('required')
+              && submitted">
+              Useremail is required*
+           </div>
+          </div>
+
+     </div>
+
+     <!-- UserId Part -->
+
+     <div class="form-group"
+     formGroupName="UserLogin"
+     [class.has-error]="!userForm.get('UserLogin').get('userid').valid && userForm.get('UserLogin').get('userid').touched"
+     [class.has-success]="userForm.get('UserLogin').get('userid').valid"
+     >
+
+     <div class="form-group">
+       <input type="text" class="form-control" 
+       placeholder="Enter your userid"
+       formControlName="userid"
+       >   
+       <div class="alert alert-danger"
+       *ngIf="userForm.get('UserLogin').get('userid').hasError('required')
+         && submitted">
+         UserId is required*
+      </div>
+     </div>
+
+</div>
+
+<!-- Submit -->      
+
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+      </form>
+      
+      
+    </div>
+    
+  </div>
+  
+</div>
