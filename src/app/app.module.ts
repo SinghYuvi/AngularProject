@@ -27,12 +27,12 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     imagePipe,
     TemplateFormComponent,
     ReactiveFormComponent,
-    ReactiveFormsModule
-   
+
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   
   ],
   providers: [],

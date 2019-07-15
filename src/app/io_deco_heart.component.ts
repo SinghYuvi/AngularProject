@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Iuser } from 'src/shared/user';
+import { Iuser } from 'src/shared/model/user';
 
 @Component({
   selector: 'heart-root',
