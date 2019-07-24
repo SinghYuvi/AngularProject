@@ -13,6 +13,12 @@ import { imagePipe } from './image.pipes';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ServicesComponent } from './services/services.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './apps.routes';
 
 @NgModule({
   declarations: [
@@ -27,13 +33,18 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     imagePipe,
     TemplateFormComponent,
     ReactiveFormComponent,
+    NavigationComponent,
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
-  
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
